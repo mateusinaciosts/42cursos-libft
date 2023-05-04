@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 12:13:13 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/04 12:14:33 by matsanto         ###   ########.fr       */
+/*   Created: 2023/05/04 14:48:54 by matsanto          #+#    #+#             */
+/*   Updated: 2023/05/04 14:48:55 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-void ft_bzero(void *s, size_t n)
+void *ft_memcpy(void *dest, const void *source, size_t n)
 {
+    char *src = (char *) source;
+    char *dst = (char *) dest;
     int i;
-    char *ptr = (char *) s;
+
     i = 0;
     while(i < n)
     {
-        ptr[i] = 0;
+        dst[i] = src[i];
         i++;
     }
+    dst[i] = '\0';
+    return (dst);
 }
 
-#include <string.h>
-
-int main(void) {
-	char	str_bzero_0[50] = "mateus";
-	char	str_ft_bzero_0[50] = "mateus";
-	bzero(str_bzero_0, 5);
-	ft_bzero(str_ft_bzero_0, 5);
-    printf("bzero(): %s\n", str_bzero_0);
-	printf("ft_bzero(): %s\n", str_ft_bzero_0);
-
+int main(void)
+{
+    char source[13] = "mateus inacio";
+    char dest[13];
+    memcpy(dest, source, 6);
+    printf("memcpy:    %s\n", dest);
+    char ft_source[13] = "mateus inacio";
+    char ft_dest[13];
+    ft_memcpy(ft_dest, ft_source, 6);
+    printf("ft_memcpy: %s\n", ft_dest);
 }
