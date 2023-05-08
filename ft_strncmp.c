@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 12:13:13 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/04 12:14:33 by matsanto         ###   ########.fr       */
+/*   Created: 2023/05/08 16:38:47 by matsanto          #+#    #+#             */
+/*   Updated: 2023/05/08 17:37:40 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
-    char *ptr = (char *) s;
+    size_t i;
+
     i = 0;
-    while(i < n)
+    while ((s1[i] != '\0' && s2[i] != '\0') && (i < n - 1) )
     {
-        ptr[i] = 0;
+        if (s1[i] != s2[i])
+            return (s1[i] - s2[i]);
         i++;
     }
-}
-
-#include <string.h>
-
-int main(void) {
-	char	str_bzero_0[50] = "mateus";
-	char	str_ft_bzero_0[50] = "mateus";
-	bzero(str_bzero_0, 5);
-	ft_bzero(str_ft_bzero_0, 5);
-    printf("bzero(): %s\n", str_bzero_0);
-	printf("ft_bzero(): %s\n", str_ft_bzero_0);
-
+    return (s1[i] - s2[i]);
+    
 }
