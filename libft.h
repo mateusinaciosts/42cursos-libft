@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:09:40 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/09 09:55:30 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/10 10:59:40 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 
 //functions required
+int     ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -32,6 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
 int		ft_strlen(char *str);
 int 	ft_strncmp(const char *s1, const char *s2, size_t n);
+char    *ft_strnstr(const char *dest, const char *src, size_t n);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);;
 int		ft_toupper(int c);

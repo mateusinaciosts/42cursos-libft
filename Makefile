@@ -6,7 +6,7 @@
 #    By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 10:36:18 by matsanto          #+#    #+#              #
-#    Updated: 2023/05/09 09:28:15 by matsanto         ###   ########.fr        #
+#    Updated: 2023/05/10 11:04:01 by matsanto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ OPTION = -I ${HEADER} -c
 
 FLAGS = -Wall -Werror -Wextra
 
-SOURCES			= 	ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
-					ft_isprint.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c\
-					ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strrchr.c ft_tolower.c\
-					ft_toupper.c ft_memchr.c ft_memcmp.c ft_strncmp.c
+SOURCES			= 	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
+					ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strnstr.c ft_strchr.c\
+					ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strrchr.c ft_tolower.c\
+					ft_toupper.c 
 						
 
 OBJ = $(SOURCES:%.c=%.o)
