@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:09:40 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/10 18:47:07 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:03:37 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char    *ft_strdup(const char *s);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
-int		ft_strlen(char *str);
+size_t  ft_strlen(const char *str);
 int 	ft_strncmp(const char *s1, const char *s2, size_t n);
 char    *ft_strnstr(const char *dest, const char *src, size_t n);
 char	*ft_strrchr(const char *s, int c);
