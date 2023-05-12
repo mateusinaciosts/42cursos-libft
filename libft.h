@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:09:40 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/11 18:03:37 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:56:38 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memset(void *ptr, int value, size_t n);
 char    *ft_strdup(const char *s);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-size_t	ft_strlcpy(char *dst, char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t  ft_strlen(const char *str);
 int 	ft_strncmp(const char *s1, const char *s2, size_t n);
 char    *ft_strnstr(const char *dest, const char *src, size_t n);
