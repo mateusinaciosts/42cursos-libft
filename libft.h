@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:09:40 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/12 14:56:38 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:43:44 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdlib.h>
 
 //functions required
 int     ft_atoi(const char *nptr);
