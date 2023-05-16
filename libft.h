@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:09:40 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/16 09:57:42 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/16 19:07:12 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);;
 int		ft_toupper(int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char    *ft_itoa(int n);
 
 #endif
