@@ -6,7 +6,7 @@
 #    By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 10:36:18 by matsanto          #+#    #+#              #
-#    Updated: 2023/05/17 12:59:15 by matsanto         ###   ########.fr        #
+#    Updated: 2023/05/19 20:39:59 by matsanto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SOURCES			= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 
 OBJ = $(SOURCES:%.c=%.o)
 
-all: fclean	${NAME}
+all: ${NAME}
 ${NAME}:
 	cc ${FLAGS} ${OPTION} ${SOURCES}
 	ar rc ${NAME} ${OBJ}
@@ -44,6 +44,6 @@ clean:
 fclean:	clean
 	rm -f $(NAME)
 
-re: fclean clean all
+re: fclean all
 
 

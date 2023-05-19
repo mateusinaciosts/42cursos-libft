@@ -6,101 +6,85 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:58:12 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/18 18:11:58 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/19 16:25:00 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len_matriz(char const *s, char c)
+int	count_words(char const *s, char c)
 {
 	int	i;
-	int	length;
+	int	cont_words;
 
 	i = 0;
-	length = 0;
-	while (s[i])
+	cont_words = 0;
+	if (*s == '\0')
+		return (cont_words);
+	if (c == '\0')
+		return (1);
+	while (*s == c && *s)
+		s++;
+	while (*s)
 	{
-		if (s[i] == c)
-		{
-			length++;
-		}
-		i++;
+		cont_words++;
+		while (*s != c && *s)
+			s++;
+		while (*s == c && *s)
+			s++;
 	}
-	length++;
-	return (length);
+	return (cont_words);
 }
 
-void	len_array(char const *s, char c, char **matriz)
+void	*clear(char **array)
 {
-	int	i;
-	int	j;
-	int	len_a;
-	int	last_a;
-
-	i = 0;
-	j = 0;
-	len_a = 0;
-	while (s[i])
-	{
-		len_a++;
-		if (s[i] == c || s[i] == '\0')
-		{
-			matriz[j] = (char *)malloc(len_a * sizeof(char));
-			j++;
-			len_a = 0;
-			last_a = i + 1;
-		}
-		i++;
-	}
-	matriz[j] = (char *)malloc((len_a + 1) * sizeof(char));
+	while (*array)
+		free(*array);
+	free(array);
+	return (NULL);
 }
 
-void	write_str(char const *s, char c, char **matriz)
+char	**ctor_array(char const *s, char c, char **matriz)
 {
 	int	i;
-	int	i_m;
-	int	j;
+	int	len_word;
 
 	i = 0;
-	i_m = 0;
-	j = 0;
-	while (s[i])
+	len_word = 0;
+	while (*s)
 	{
-		if (s[i] == c)
+		while (s[len_word] != c && s[len_word])
+			len_word++;
+		matriz[i] = (char *)malloc((len_word + 1) * sizeof(char));
+		if (matriz[i] == NULL)
+			return (clear(matriz));
+		matriz[i][len_word] = '\0';
+		while (len_word > 0)
 		{
-			matriz[j][i_m] = '\0';
-			j++;
-			i++;
-			i_m = 0;
+			matriz[i][len_word - 1] = s[len_word - 1];
+			len_word--;
 		}
-		matriz[j][i_m] = s[i];
+		while (*s != c && *s)
+			s++;
+		while (*s == c && *s)
+			s++;
 		i++;
-		i_m++;
 	}
-	matriz[j][i_m] = '\0';
+	return (matriz);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**matriz;
-	int		len_m;
+	char	**array;
+	int		qty_array;
 
-	len_m = len_matriz(s, c);
-	matriz = (char **)malloc((len_m + 1) * sizeof(char *));
-	len_array(s, c, matriz);
-	write_str(s, c, matriz);
-	matriz[len_m] = '\0';
-	return (matriz);
+	qty_array = count_words(s, c);
+	array = (char **)malloc((qty_array + 1) * sizeof(char *));
+	if (array == NULL)
+		return (NULL);
+	while (*s == c && *s)
+		s++;
+	array = ctor_array(s, c, array);
+	array[qty_array] = NULL;
+	return (array);
 }
-
-/* int	main(void)
-{
-	const char *str = "Hello,World,OK";
-	char **substrings = ft_split(str, ',');
-	for (int i = 0; i < 3; i++)
-	{
-		printf("%s\n", substrings[i]);
-	}
-} 
- */
