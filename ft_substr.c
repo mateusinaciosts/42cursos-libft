@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:58:20 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/16 09:56:36 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:33:06 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (sub);
 	}
 	if (start + len > len_s)
-	len = len_s - start;
+		len = len_s - start;
 	sub = malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (0);
