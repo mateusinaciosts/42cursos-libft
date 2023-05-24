@@ -6,15 +6,14 @@
 #    By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 10:36:18 by matsanto          #+#    #+#              #
-#    Updated: 2023/05/23 14:42:57 by matsanto         ###   ########.fr        #
+#    Updated: 2023/05/24 11:36:51 by matsanto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-HEADER = ./libft.h
+HEADER = .
 
-OPTION = -I ${HEADER} -c 
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -35,7 +34,7 @@ ${NAME}:	${OBJ}
 	ar -rcs ${NAME} ${OBJ}
 
 %.o:	%.c
-	cc $(FLAGS) -I ./libft.h -c $< -o $@
+	cc $(FLAGS) -I ${HEADER} -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

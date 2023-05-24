@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:58:12 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/19 16:25:00 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/05/24 11:20:22 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	count_words(char const *s, char c)
 {
-	int	i;
 	int	cont_words;
 
-	i = 0;
 	cont_words = 0;
 	if (*s == '\0')
 		return (cont_words);
